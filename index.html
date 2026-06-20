@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reel Ninja — The Internet's Coolest Short-Form Content Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Permanent+Marker&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- lightGallery for video popups -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2/css/lightgallery-bundle.min.css">
+    <!-- Splitting.js for text effects -->
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2"></script>
+</head>
+<body>
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-text">REEL NINJA</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#archive">Archive</a></li>
+            <li><a href="#studio">Studio</a></li>
+            <li><a href="#manifesto">Manifesto</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta"><i class="ph ph-lightning"></i> Summon the Ninjas</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#archive">Archive</a></li>
+            <li><a href="#studio">Studio</a></li>
+            <li><a href="#manifesto">Manifesto</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta mobile-cta">Summon the Ninjas</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="hero.png" alt="Reel Ninja Hero" class="hero-bg-img">
+        </div>
+        <div class="hero-vignette"></div>
+        
+        <!-- Top Left Manifesto Text -->
+        <div class="hero-top-left">
+            <p class="hero-manifesto-text">we create art, not content.<br>content is cheap. art is memorable.</p>
+            <p class="hero-manifesto-sub">Short-form reels with insane storytelling<br>that's distinct and impactful.</p>
+        </div>
+
+        <!-- Trusted By Badge -->
+        <div class="hero-trusted">
+            <span>Trusted by</span>
+            <span class="yc-badge">Y Combinator</span>
+            <span>companies</span>
+        </div>
+
+        <!-- Main Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line" data-text="the internet's coolest">the internet's coolest</span>
+                <span class="title-line title-red" data-text="short-form studio">short-form studio</span>
+            </h1>
+            <p class="hero-subtitle">
+                The goats of the cultural market in reels.
+                <br>Helping brands launch on social with taste.
+            </p>
+            <div class="hero-cta-row">
+                <a href="#contact" class="hero-cta hero-main-cta magnetic-btn">
+                    <span>Steal Our Attention</span>
+                    <i class="ph ph-arrow-circle-right"></i>
+                </a>
+                <a href="#work" class="hero-cta-secondary magnetic-btn">
+                    <span>See Our Work</span>
+                    <i class="ph ph-play-circle"></i>
+                </a>
+            </div>
+            <!-- Stats Row -->
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num">50M+</span>
+                    <span class="hero-stat-label">Views</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">200+</span>
+                    <span class="hero-stat-label">Brands</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">500+</span>
+                    <span class="hero-stat-label">Reels</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee Strip (after hero) -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span class="marquee-item">★ 50M+ VIEWS GENERATED</span>
+            <span class="marquee-item">★ 200+ BRANDS SERVED</span>
+            <span class="marquee-item">★ VIRAL CONTENT FACTORY</span>
+            <span class="marquee-item">★ SHORT-FORM MASTERS</span>
+            <span class="marquee-item">★ STOP THE SCROLL</span>
+            <span class="marquee-item">★ 50M+ VIEWS GENERATED</span>
+            <span class="marquee-item">★ 200+ BRANDS SERVED</span>
+            <span class="marquee-item">★ VIRAL CONTENT FACTORY</span>
+            <span class="marquee-item">★ SHORT-FORM MASTERS</span>
+            <span class="marquee-item">★ STOP THE SCROLL</span>
+        </div>
+    </div>
+
+    <!-- Section Divider -->
+    <div class="section-fade-top"></div>
+
+    <!-- Fresh Drops Section -->
+    <section class="fresh-drops" id="work">
+        <div class="fresh-drops-bg">
+            <img src="section3.png" alt="" class="section-bg-img">
+        </div>
+        <div class="fresh-drops-overlay"></div>
+        <div class="section-header">
+            <span class="section-label">— Our Sacred Reels —</span>
+            <h2 class="section-title grunge-font">Fresh Drops</h2>
+            <p class="section-desc">The reels the gods would scroll.</p>
+        </div>
+        <div class="drops-carousel">
+            <div class="swiper drops-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                    <div class="swiper-slide"><div class="drop-card"><a href="#" class="drop-card-media lightbox-video"><div class="media-placeholder"></div><div class="play-btn"><i class="ph-fill ph-play"></i></div></a></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-fade-mid"></div>
+
+    <!-- Archive Section -->
+    <section class="archive" id="archive">
+        <div class="archive-bg">
+            <img src="section2.png" alt="" class="section-bg-img">
+        </div>
+        <div class="section-header">
+            <span class="section-label">— The Reel Ninja Archive —</span>
+            <h2 class="section-title">Our Work. Our Process. Our Secrets.</h2>
+        </div>
+        <div class="archive-grid">
+            <div class="archive-item large">
+                <!-- REPLACE: archive-main.jpg — Behind the scenes main image -->
+                <div class="archive-placeholder">Behind The Scenes</div>
+                <div class="play-btn"><i class="ph-fill ph-play"></i></div>
+                <span class="archive-tag">BEHIND THE SCENES</span>
+            </div>
+            <div class="archive-item">
+                <!-- REPLACE: archive-2.jpg — Process/work image -->
+                <div class="archive-placeholder">Process 1</div>
+                <div class="play-btn"><i class="ph-fill ph-play"></i></div>
+            </div>
+            <div class="archive-item tall">
+                <!-- REPLACE: archive-3.jpg — "Viral is Choice" poster -->
+                <div class="archive-placeholder viral-poster">VIRAL IS<br>CHOICE.</div>
+            </div>
+            <div class="archive-item">
+                <!-- REPLACE: archive-4.jpg — "Attention" quote poster -->
+                <div class="archive-placeholder attention-poster">ATTENTION IS THE ONLY ALGORITHM THAT MATTERS.</div>
+                <div class="play-btn"><i class="ph-fill ph-play"></i></div>
+            </div>
+            <div class="archive-item">
+                <!-- REPLACE: archive-5.jpg — More work -->
+                <div class="archive-placeholder">Process 2</div>
+                <div class="play-btn"><i class="ph-fill ph-play"></i></div>
+            </div>
+            <div class="archive-item wide">
+                <!-- REPLACE: archive-6.jpg — Culture image -->
+                <div class="archive-placeholder culture-poster">NOT JUST CONTENT.<br>CULTURE.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-fade-mid"></div>
+
+    <!-- CTA + Footer Combined Section -->
+    <section class="cta-footer-section" id="contact">
+        <div class="cta-section-bg">
+            <img src="section5.png" alt="" class="section-bg-img">
+        </div>
+        <div class="cta-footer-overlay"></div>
+        <div class="cta-footer-content">
+            <div class="final-cta">
+                <h2 class="final-cta-title">YOUR BRAND DESERVES TO<br>BE <span class="highlight-word">OBSESSED</span> OVER.</h2>
+                <a href="#" class="hero-cta magnetic-btn final-btn">
+                    <span>Let's Make It Happen</span>
+                    <i class="ph ph-arrow-right"></i>
+                </a>
+                <!-- Brand logos -->
+                <div class="brand-strip cta-brands">
+                    <div class="brand-track">
+                        <img src="https://cdn.simpleicons.org/nike/ffffff" alt="Nike" height="18">
+                        <img src="https://cdn.simpleicons.org/adidas/ffffff" alt="Adidas" height="18">
+                        <img src="https://cdn.simpleicons.org/redbull/ffffff" alt="Red Bull" height="18">
+                        <img src="https://cdn.simpleicons.org/mcdonalds/ffffff" alt="McDonalds" height="18">
+                        <img src="https://cdn.simpleicons.org/cocacola/ffffff" alt="Coca Cola" height="18">
+                        <img src="https://cdn.simpleicons.org/netflix/ffffff" alt="Netflix" height="18">
+                        <img src="https://cdn.simpleicons.org/spotify/ffffff" alt="Spotify" height="18">
+                        <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" height="18">
+                        <img src="https://cdn.simpleicons.org/samsung/ffffff" alt="Samsung" height="18">
+                        <img src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify" height="18">
+                        <img src="https://cdn.simpleicons.org/uber/ffffff" alt="Uber" height="18">
+                        <img src="https://cdn.simpleicons.org/airbnb/ffffff" alt="Airbnb" height="18">
+                        <img src="https://cdn.simpleicons.org/nike/ffffff" alt="Nike" height="18">
+                        <img src="https://cdn.simpleicons.org/adidas/ffffff" alt="Adidas" height="18">
+                        <img src="https://cdn.simpleicons.org/redbull/ffffff" alt="Red Bull" height="18">
+                        <img src="https://cdn.simpleicons.org/mcdonalds/ffffff" alt="McDonalds" height="18">
+                        <img src="https://cdn.simpleicons.org/cocacola/ffffff" alt="Coca Cola" height="18">
+                        <img src="https://cdn.simpleicons.org/netflix/ffffff" alt="Netflix" height="18">
+                        <img src="https://cdn.simpleicons.org/spotify/ffffff" alt="Spotify" height="18">
+                        <img src="https://cdn.simpleicons.org/apple/ffffff" alt="Apple" height="18">
+                        <img src="https://cdn.simpleicons.org/samsung/ffffff" alt="Samsung" height="18">
+                        <img src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify" height="18">
+                        <img src="https://cdn.simpleicons.org/uber/ffffff" alt="Uber" height="18">
+                        <img src="https://cdn.simpleicons.org/airbnb/ffffff" alt="Airbnb" height="18">
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="footer-links">
+                    <a href="#work">Work</a>
+                    <a href="#archive">Archive</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-bottom">
+                    <span class="footer-logo">REEL NINJA</span>
+                    <div class="footer-socials">
+                        <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ph ph-x-logo"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                    <span class="footer-copy">© 2024 Reel Ninja Studios</span>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+    <!-- SVG Noise Filter -->
+    <svg class="svg-noise" aria-hidden="true">
+        <filter id="noise-filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <feColorMatrix type="saturate" values="0"/>
+        </filter>
+    </svg>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- lightGallery for video popup -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2/lightgallery.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2/plugins/video/lg-video.umd.min.js"></script>
+    <!-- Splitting.js for text character animations -->
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
