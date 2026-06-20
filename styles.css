@@ -935,6 +935,66 @@ img {
     border-radius: 4px;
 }
 
+/* --- Manifesto / Principle Cards --- */
+.manifesto-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 1.2rem;
+}
+
+.principle-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1.8rem;
+    background: rgba(10, 8, 5, 0.8) !important;
+    backdrop-filter: blur(8px);
+    border-radius: 2px;
+    border: 2px solid;
+    border-image: linear-gradient(135deg, var(--accent-gold-dark), var(--accent-gold-light), var(--accent-gold-dark)) 1;
+    min-height: 180px;
+}
+
+.principle-card .principle-number {
+    font-family: var(--font-subhead);
+    font-size: 0.75rem;
+    color: var(--accent-gold);
+    letter-spacing: 3px;
+    margin-bottom: 0.8rem;
+    opacity: 0.6;
+}
+
+.principle-card .principle-title {
+    font-family: var(--font-headline);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: white;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+}
+
+.principle-card .principle-desc {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+}
+
+/* CTA Section extras */
+.cta-label {
+    color: rgba(255, 255, 255, 0.4) !important;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.final-cta-sub {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .archive-caption {
     position: absolute;
     bottom: 1rem;
@@ -1654,6 +1714,16 @@ img {
         grid-auto-rows: 160px;
         padding: 0 1.5rem;
         gap: 0.8rem;
+    }
+
+    .manifesto-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .principle-card {
+        min-height: auto;
+        padding: 1.5rem;
     }
 
     .archive-item.large {
