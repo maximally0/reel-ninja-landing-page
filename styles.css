@@ -677,6 +677,13 @@ img {
     display: block;
 }
 
+.drop-card-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .media-placeholder {
     width: 100%;
     height: 100%;
@@ -717,8 +724,11 @@ img {
 
 .drop-card:hover .play-btn,
 .archive-item:hover .play-btn {
-    opacity: 1;
-    box-shadow: 0 0 0 15px rgba(212, 168, 67, 0.1);
+    opacity: 0;
+}
+
+.play-btn {
+    display: none;
 }
 
 /* --- Clients Section --- */
@@ -1380,8 +1390,7 @@ img {
 .marquee-strip {
     overflow: hidden;
     padding: 1rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border: none;
 }
 
 .marquee-track {
@@ -1626,7 +1635,8 @@ img {
 
     .hero-trusted {
         top: 4.5rem;
-        font-size: 0.7rem;
+        font-size: 0.65rem;
+        white-space: nowrap;
     }
 
     .hero-content {
@@ -1693,22 +1703,46 @@ img {
         padding: 0 1.5rem;
     }
 
-    /* Fresh Drops */
+    /* Section 2 - Fresh Drops / Proof */
+    .fresh-drops {
+        min-height: auto;
+        padding: 3rem 0;
+    }
+
+    .fresh-drops .section-header {
+        margin-bottom: 1rem;
+    }
+
+    .fresh-drops .section-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .fresh-drops .section-desc {
+        font-size: 0.7rem;
+    }
+
+    .fresh-drops .section-label {
+        font-size: 0.6rem;
+    }
+
     .drops-swiper {
-        padding: 1rem;
+        padding: 0.5rem 0;
     }
 
-    /* Clients */
-    .clients-gallery {
-        padding: 0 1.5rem;
-        gap: 1rem;
+    .drop-card-media {
+        aspect-ratio: 9/16;
     }
 
-    .client-frame {
-        width: 160px;
+    /* Section 3 - Manifesto/Principles */
+    .archive {
+        min-height: auto;
+        padding: 3rem 0;
     }
 
-    /* Archive */
+    .archive .section-title {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+
     .archive-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 160px;
@@ -1717,13 +1751,29 @@ img {
     }
 
     .manifesto-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-auto-rows: auto;
+        gap: 0.6rem;
     }
 
     .principle-card {
         min-height: auto;
-        padding: 1.5rem;
+        padding: 1.2rem;
+    }
+
+    .principle-card .principle-number {
+        font-size: 0.6rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .principle-card .principle-title {
+        font-size: 0.85rem;
+        margin-bottom: 0;
+    }
+
+    /* Hide description on mobile - just show titles */
+    .principle-card .principle-desc {
+        display: none;
     }
 
     .archive-item.large {
@@ -1739,74 +1789,55 @@ img {
         grid-row: span 2;
     }
 
-    /* Manifesto */
-    .manifesto {
-        flex-direction: column;
-        padding: 3rem 1.5rem;
-        gap: 1.5rem;
-        min-height: auto;
+    /* CTA + Footer */
+    .cta-footer-content {
+        padding: 3rem 1.5rem 1.5rem;
     }
 
-    .manifesto-visual {
-        order: -1;
-    }
-
-    .manifesto-img-placeholder {
-        font-size: 4rem;
-    }
-
-    .manifesto-line {
-        font-size: clamp(1.1rem, 5vw, 1.6rem);
-    }
-
-    /* CTA */
-    .cta-section {
-        padding: 2.5rem 1.5rem;
-    }
-
-    .cta-cards {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-    }
-
-    .cta-card {
-        aspect-ratio: auto;
-        min-height: 180px;
-        padding: 1.5rem;
-    }
-
-    .cta-card h3 {
-        font-size: clamp(1rem, 4vw, 1.4rem);
+    .final-cta {
+        padding: 1.5rem 0 1rem;
     }
 
     .final-cta-title {
-        font-size: clamp(1.3rem, 5vw, 2rem);
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
     }
 
-    /* Footer */
-    .footer {
-        padding: 2rem 1.5rem;
+    .final-cta-sub {
+        font-size: 0.75rem;
+        margin-bottom: 1.5rem;
     }
 
-    .footer-top {
+    .final-btn {
+        font-size: 0.75rem;
+        padding: 0.7rem 1.5rem;
+    }
+
+    .footer-bottom {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
         text-align: center;
-    }
-
-    .footer-links {
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: center;
-    }
-
-    .footer-socials {
-        gap: 1.5rem;
     }
 
     /* Marquee */
     .marquee-item {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    .marquee-strip {
+        padding: 0.6rem 0;
+    }
+
+    /* Section dividers smaller on mobile */
+    .section-fade-top {
+        height: 50px;
+        margin-bottom: -50px;
+    }
+
+    .section-fade-mid {
+        height: 60px;
+        margin-top: -20px;
+        margin-bottom: -20px;
     }
 }
 

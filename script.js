@@ -49,22 +49,23 @@ if (mobileMenuBtn && mobileMenu) {
 }
 
 // --- Swiper Carousel (Fresh Drops) ---
+const isMobile = window.innerWidth <= 768;
 const dropsSwiper = new Swiper('.drops-swiper', {
-    slidesPerView: 2,
-    spaceBetween: 16,
+    slidesPerView: isMobile ? 2.5 : 2,
+    spaceBetween: isMobile ? 10 : 16,
     centeredSlides: false,
     loop: true,
     loopAdditionalSlides: 10,
     autoplay: {
         delay: 0,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true,
+        pauseOnMouseEnter: !isMobile,
     },
-    speed: 3000,
+    speed: isMobile ? 1800 : 3000,
     grabCursor: true,
     allowTouchMove: true,
     breakpoints: {
-        480: { slidesPerView: 2.5, spaceBetween: 16 },
+        480: { slidesPerView: 2.5, spaceBetween: 12 },
         768: { slidesPerView: 3.5, spaceBetween: 20 },
         1024: { slidesPerView: 4.5, spaceBetween: 24 },
         1400: { slidesPerView: 5.5, spaceBetween: 24 },
@@ -266,6 +267,45 @@ gsap.to('.hero-bg', {
     ease: 'none',
 });
 
+// --- Parallax on Section 2 (Proof) background ---
+gsap.to('.fresh-drops-bg', {
+    scrollTrigger: {
+        trigger: '.fresh-drops',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+    },
+    y: -80,
+    scale: 1.15,
+    ease: 'none',
+});
+
+// --- Parallax on Section 3 (Manifesto) background ---
+gsap.to('.archive-bg', {
+    scrollTrigger: {
+        trigger: '.archive',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+    },
+    y: -80,
+    scale: 1.15,
+    ease: 'none',
+});
+
+// --- Parallax on Section 4 (CTA) background ---
+gsap.to('.cta-section-bg', {
+    scrollTrigger: {
+        trigger: '.cta-footer-section',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+    },
+    y: -60,
+    scale: 1.12,
+    ease: 'none',
+});
+
 // --- Magnetic Button Effect ---
 document.querySelectorAll('.magnetic-btn').forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
@@ -391,6 +431,63 @@ if (scrambleEl) {
     // Start after hero animation completes
     setTimeout(nextPhrase, 2000);
 }
+
+// --- Video Lazy Loading & Smart Playback ---
+// Only load videos when the carousel section is in view
+const videoSection = document.querySelector('.fresh-drops');
+let videosLoaded = false;
+
+function loadAndPlayVisibleVideos() {
+    const slides = document.querySelectorAll('.drops-swiper .swiper-slide-visible .drop-card video, .drops-swiper .swiper-slide-active .drop-card video');
+    slides.forEach(video => {
+        if (!video.src && video.dataset.src) {
+            video.src = video.dataset.src;
+        }
+        video.play().catch(() => {});
+    });
+}
+
+function pauseHiddenVideos() {
+    document.querySelectorAll('.drop-card video').forEach(video => {
+        if (!video.closest('.swiper-slide-visible') && !video.closest('.swiper-slide-active')) {
+            video.pause();
+        }
+    });
+}
+
+if (videoSection) {
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Load all video sources when section comes into view
+                if (!videosLoaded) {
+                    document.querySelectorAll('.drop-card video[data-src]').forEach(video => {
+                        video.src = video.dataset.src;
+                        video.removeAttribute('data-src');
+                    });
+                    videosLoaded = true;
+                }
+                // Play visible ones
+                setTimeout(loadAndPlayVisibleVideos, 300);
+            } else {
+                // Pause all when section is out of view
+                document.querySelectorAll('.drop-card video').forEach(video => {
+                    video.pause();
+                });
+            }
+        });
+    }, { threshold: 0.1 });
+
+    videoObserver.observe(videoSection);
+}
+
+// Play/pause on slide change
+dropsSwiper.on('slideChangeTransitionEnd', () => {
+    if (videosLoaded) {
+        loadAndPlayVisibleVideos();
+        pauseHiddenVideos();
+    }
+});
 
 // --- Marquee & Brand Strip: Ensure infinite seamless loop ---
 function setupInfiniteMarquee(selector) {
